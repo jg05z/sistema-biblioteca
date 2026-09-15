@@ -1,50 +1,71 @@
 # Sistema de Biblioteca
 
-Projeto de modelagem de banco de dados desenvolvido no MySQL Workbench para representar um sistema simples de gerenciamento de biblioteca.
+Projeto de modelagem de banco de dados desenvolvido no MySQL Workbench para representar o sistema de empréstimos de uma biblioteca universitária.
 
 ## 📚 Estrutura do Banco de Dados
 
-O modelo é composto por três entidades principais:
+O modelo é composto por quatro entidades principais:
 
 ### Aluno
 
-Armazena os dados dos alunos cadastrados.
+Representa os alunos da instituição autorizados a realizar empréstimos.
 
 - RA
 - Nome
-- Curso
+- E-mail
+- Telefone
 
 ### Livro
 
-Armazena as informações dos livros disponíveis na biblioteca.
+Representa as publicações físicas disponíveis na biblioteca.
 
 - ISBN
 - Nome
 - Autor
 - Páginas
 
+### Colaborador
+
+Representa os funcionários autorizados a realizar os empréstimos.
+
+- CPF
+- Nome
+- E-mail
+- Cargo
+
 ### Empréstimo
 
-Registra os empréstimos realizados pelos alunos.
+Registra os empréstimos realizados no sistema.
 
-- ID do empréstimo
-- RA do aluno
-- ISBN do livro
+- ID
 - Data do empréstimo
 - Data de devolução
+- ISBN do livro
+- CPF do colaborador
 
 ## 🔗 Relacionamentos
 
-O sistema possui os seguintes relacionamentos:
+O modelo possui os seguintes relacionamentos:
 
-- Um aluno pode realizar vários empréstimos.
 - Um livro pode estar associado a vários empréstimos.
-- Cada empréstimo está relacionado a um aluno e a um livro.
+- Um colaborador pode registrar vários empréstimos.
+- Cada empréstimo está relacionado a um livro e a um colaborador.
+
+## 🔑 Chaves
+
+As entidades utilizam chaves primárias e estrangeiras para garantir a integridade dos dados.
+
+- `Aluno.ra` - Chave primária
+- `Livro.isbn` - Chave primária
+- `Colaborador.cpf` - Chave primária
+- `Emprestimo.id` - Chave primária
+- `Emprestimo.livroIsbn` → `Livro.isbn` - Chave estrangeira
+- `Emprestimo.colaboradorCpf` → `Colaborador.cpf` - Chave estrangeira
 
 ## 🗂️ Arquivos
 
-- `biblioteca.mwb` - Modelo EER criado no MySQL Workbench.
-- `biblioteca.sql` - Script SQL para criação do banco de dados.
+- `biblioteca.mwb` - Modelo EER desenvolvido no MySQL Workbench.
+- `biblioteca.sql` - Script SQL para criação da estrutura do banco de dados.
 
 ## 🛠️ Tecnologias utilizadas
 
@@ -52,6 +73,6 @@ O sistema possui os seguintes relacionamentos:
 - MySQL
 - SQL
 
-## 📌 Modelo
+## 📌 Objetivo
 
-O projeto utiliza chaves primárias e estrangeiras para garantir a integridade dos relacionamentos entre Aluno, Livro e Empréstimo.
+Desenvolver um Diagrama Entidade-Relacionamento (DER), definindo entidades, atributos, tipos de dados, chaves primárias, chaves estrangeiras e os relacionamentos necessários para representar a situação proposta.
