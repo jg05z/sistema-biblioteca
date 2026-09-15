@@ -7,24 +7,24 @@ Projeto de modelagem de banco de dados desenvolvido no MySQL Workbench para repr
 O modelo é composto por três entidades principais:
 
 ### Aluno
+
 Armazena os dados dos alunos cadastrados.
 
 - RA
 - Nome
-- E-mail
-- Telefone
+- Curso
 
 ### Livro
+
 Armazena as informações dos livros disponíveis na biblioteca.
 
 - ISBN
-- Título
+- Nome
 - Autor
-- Editora
-- Ano de publicação
-- Quantidade
+- Páginas
 
 ### Empréstimo
+
 Registra os empréstimos realizados pelos alunos.
 
 - ID do empréstimo
@@ -46,7 +46,7 @@ O sistema possui os seguintes relacionamentos:
 - `biblioteca.mwb` - Modelo EER criado no MySQL Workbench.
 - `biblioteca.sql` - Script SQL para criação do banco de dados.
 
-## 🛠️ Tecnologia utilizada
+## 🛠️ Tecnologias utilizadas
 
 - MySQL Workbench
 - MySQL
